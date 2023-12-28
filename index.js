@@ -1,12 +1,15 @@
 var daySo = [];
+
 function clearInput() {
   document.getElementById("nhap-so-n").value = "";
 }
 function themSo() {
   var soThemVao = document.getElementById("nhap-so-n").value * 1;
+  var showArray = document.getElementById("show-mang")
   daySo.push(soThemVao);
   console.log("🥶 - daySo:", daySo);
   clearInput();
+  showArray.innerHTML = `Dãy số: ${daySo}`
 }
 
 // câu 1: Tổng số dương
@@ -114,56 +117,51 @@ function laSoNguyenTo(num) {
 }
 
 function soNguyenToDauTien() {
-    var soNguyenToDauTien =  null;
+  var soNguyenToDauTien = null;
   var ketqua = document.getElementById("so-nguyen-to-dau-tien");
-    
+
   for (var i = 0; i < daySo.length; i++) {
     if (laSoNguyenTo(daySo[i])) {
-        soNguyenToDauTien =daySo[i] ;
+      soNguyenToDauTien = daySo[i];
       break;
-      }
     }
+  }
 
-
-    if(laSoNguyenTo(soNguyenToDauTien) !== null) {
-        ketqua.innerHTML = `Số nguyên tố đầu tiên: ${soNguyenToDauTien}`;
-    } else {
-        
-        ketqua.innerHTML = `Không có số nguyên tố nào`;
-    }
-  
+  if (laSoNguyenTo(soNguyenToDauTien)) {
+    ketqua.innerHTML = `Số nguyên tố đầu tiên: ${soNguyenToDauTien}`;
+  } else {
+    ketqua.innerHTML = `Không có số nguyên tố nào`;
+  }
 }
 // Câu 9: Đếm số nguyên
 function demSoNguyen() {
-    var mangSoNguyen = []
-    for (var i = 0; i < daySo.length; i++) {
-        if (Number.isInteger(daySo[i])) {
-            mangSoNguyen.push(daySo[i])
-        }
+  var mangSoNguyen = [];
+  for (var i = 0; i < daySo.length; i++) {
+    if (Number.isInteger(daySo[i])) {
+      mangSoNguyen.push(daySo[i]);
     }
-    var ketqua = document.getElementById("so-nguyen");
-    ketqua.innerHTML = `Số số nguyên: ${mangSoNguyen.length}`;
+  }
+  var ketqua = document.getElementById("so-nguyen");
+  ketqua.innerHTML = `Số số nguyên: ${mangSoNguyen.length}`;
 }
 // Câu 10: So sánh số lượng sô âm và số dương
 function soSanhAmDuong() {
-    var mangSoAm = []
-    var mangSoDuong = []
-    var ketqua = document.getElementById("so-sanh-am-duong");
+  var mangSoAm = [];
+  var mangSoDuong = [];
+  var ketqua = document.getElementById("so-sanh-am-duong");
 
-    for (var i = 0; i < daySo.length; i++) {
-        if (daySo[i] <0) {
-            mangSoAm.push(daySo[i])
-        } else {
-            mangSoDuong.push(daySo[i])
-        }
-    }
-    if (mangSoAm.length < mangSoDuong.length) {
-    ketqua.innerHTML = `Số Âm < Số Dương`;
-        
-    } else if (mangSoAm.length > mangSoDuong.length) {
-
-        ketqua.innerHTML = `Số Âm > Số Dương`;
+  for (var i = 0; i < daySo.length; i++) {
+    if (daySo[i] < 0) {
+      mangSoAm.push(daySo[i]);
     } else {
-        ketqua.innerHTML = `Số Âm = Số Dương`;
+      mangSoDuong.push(daySo[i]);
     }
+  }
+  if (mangSoAm.length < mangSoDuong.length) {
+    ketqua.innerHTML = `Số Âm < Số Dương`;
+  } else if (mangSoAm.length > mangSoDuong.length) {
+    ketqua.innerHTML = `Số Âm > Số Dương`;
+  } else {
+    ketqua.innerHTML = `Số Âm = Số Dương`;
+  }
 }
