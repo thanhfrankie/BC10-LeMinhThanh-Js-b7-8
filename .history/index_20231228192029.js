@@ -97,7 +97,7 @@ function doiCho() {
 function sapXepTangDan() {
   var daySoTangDan = []
   daySoTangDan = daySo.sort(function (a, b) {
-    return a-b
+    
   });
   var ketqua = document.getElementById("sap-xep-tang-dan");
   ketqua.innerHTML = `Mảng sau khi đổi: ${daySoTangDan}`;

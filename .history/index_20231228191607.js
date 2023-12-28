@@ -96,9 +96,7 @@ function doiCho() {
 // Câu 7: Sắp xếp tăng dần
 function sapXepTangDan() {
   var daySoTangDan = []
-  daySoTangDan = daySo.sort(function (a, b) {
-    return a-b
-  });
+  daySoTangDan = daySo.sort();
   var ketqua = document.getElementById("sap-xep-tang-dan");
   ketqua.innerHTML = `Mảng sau khi đổi: ${daySoTangDan}`;
 }
@@ -155,8 +153,7 @@ function soSanhAmDuong() {
   for (var i = 0; i < daySo.length; i++) {
     if (daySo[i] < 0 && daySo[i] !== 0) {
       mangSoAm.push(daySo[i]);
-    }
-    if(daySo[i] > 0 && daySo[i] !== 0){
+    } else {
       mangSoDuong.push(daySo[i]);
     }
   }

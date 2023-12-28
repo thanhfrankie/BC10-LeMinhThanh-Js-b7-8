@@ -96,9 +96,7 @@ function doiCho() {
 // Câu 7: Sắp xếp tăng dần
 function sapXepTangDan() {
   var daySoTangDan = []
-  daySoTangDan = daySo.sort(function (a, b) {
-    return a-b
-  });
+  daySoTangDan = daySo.sort(function(a));
   var ketqua = document.getElementById("sap-xep-tang-dan");
   ketqua.innerHTML = `Mảng sau khi đổi: ${daySoTangDan}`;
 }
