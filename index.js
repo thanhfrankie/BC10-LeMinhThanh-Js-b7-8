@@ -64,9 +64,9 @@ function soDuongNhoNhat() {
   var ketqua = document.getElementById("so-duong-nho-nhat");
 
   if (daySoDuong !== null) {
-    ketqua.innerHTML = `Không có số dương nào trong mảng`;
-  } else {
     ketqua.innerHTML = `Số dương nhỏ nhất: ${soDuongNhoNhat}`;
+  } else {
+    ketqua.innerHTML = `Không có số dương nào trong mảng`;
   }
 }
 // Câu 5: Tìm số chẵn cuối cùng
