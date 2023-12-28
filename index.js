@@ -95,10 +95,10 @@ function doiCho() {
 
 // Câu 7: Sắp xếp tăng dần
 function sapXepTangDan() {
-  daySo.sort();
-
+  var daySoTangDan = []
+  daySoTangDan = daySo.sort();
   var ketqua = document.getElementById("sap-xep-tang-dan");
-  ketqua.innerHTML = `Mảng sau khi đổi: ${daySo}`;
+  ketqua.innerHTML = `Mảng sau khi đổi: ${daySoTangDan}`;
 }
 // Câu 8: Tìm số nguyên tố đầu tiên
 function laSoNguyenTo(num) {
